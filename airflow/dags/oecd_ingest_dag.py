@@ -2,8 +2,8 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from ingestion.oecd_ingest import run_ingest
-from ingestion.clean_oecd import run_clean
-from ingestion.load_clickhouse import run_load
+from processing.clean_oecd import run_clean
+from warehouse.load_clickhouse import run_load
 
 
 with DAG(
